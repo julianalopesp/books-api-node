@@ -111,18 +111,6 @@ module.exports = {
         }
     },
 
-    getUser: async (req, res) => {
-        try {
-            const user = await User.findById(req.params.id);
-            res.status(200).json(user)
-        } catch {
-            return res.status(400).json({
-                success: false,
-                error: 'Error'
-            });
-        }
-    },
-
     resetPassword: async (req, res) => {
         const { email, token, password } = req.body;
 
